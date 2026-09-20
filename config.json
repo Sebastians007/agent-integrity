@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "mode": "balanced",
+  "auto_verify_on_stop": true,
+  "baseline_verification_on_session_start": true,
+  "require_verification": true,
+  "block_on_preexisting_failures": false,
+  "verification_timeout_seconds": 120,
+  "verification_commands": [],
+  "source_policy": {
+    "prefer_primary_sources": true,
+    "require_exact_version_docs_for_software": true,
+    "treat_model_memory_as_unverified": true,
+    "treat_repetition_as_zero_new_evidence": true
+  },
+  "thresholds": {
+    "warn_after_tool_failures": 2,
+    "reground_after_tool_failures": 3,
+    "reground_after_edits_without_green_verify": 10,
+    "fresh_context_after_failed_verification_cycles": 3
+  },
+  "protected_path_fragments": [
+    ".git/",
+    ".env",
+    "credentials",
+    "secrets"
+  ],
+  "dangerous_command_patterns": [
+    "rm -rf /",
+    "git reset --hard",
+    "git clean -fd",
+    "drop table",
+    "truncate table"
+  ],
+  "ignore_changed_paths": [
+    ".ai-integrity/",
+    ".claude/integrity/state.json"
+  ]
+}

@@ -1,0 +1,8 @@
+Install this Agent Integrity Runtime into the current Claude Code project.
+
+1. Read README.md, docs/DESIGN.md, and docs/SOURCE-POLICY.md first.
+2. Run install.py against the current repository. Preserve existing Claude settings and hooks; do not replace them manually.
+3. Inspect the current project's package manager, scripts, test setup, framework, and installed versions. Configure .claude/integrity/config.json with the project's real verification commands. Do not invent commands.
+4. Run those verification commands once before changing application code. Report pre-existing failures as pre-existing; do not weaken or delete tests to obtain green output.
+5. Confirm that SessionStart, PreToolUse, PostToolUse, PostToolUseFailure, and Stop hooks are installed.
+6. Explain concisely what the runtime will enforce in this repository.

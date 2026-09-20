@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "mode": "balanced",
+  "auto_verify_on_stop": true,
+  "baseline_verification_on_session_start": true,
+  "require_verification": true,
+  "block_on_preexisting_failures": false,
+  "verification_timeout_seconds": 180,
+  "verification_commands": [
+    "npm run typecheck",
+    "npm run lint",
+    "npm test"
+  ],
+  "thresholds": {
+    "warn_after_tool_failures": 2,
+    "reground_after_tool_failures": 3,
+    "reground_after_edits_without_green_verify": 10,
+    "fresh_context_after_failed_verification_cycles": 3
+  }
+}
